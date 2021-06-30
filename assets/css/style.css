@@ -64,3 +64,9 @@ input[type="submit"]  {
 	border-radius: 50%;
 	border: 10px solid #fff;
 }
+.profile h1 {
+
+	text-align: center;
+	font-family: impact;
+	font-weight: normal;
+}

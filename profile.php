@@ -12,10 +12,11 @@
 	
 	
 
-	<div class="wrap shadow">
-		<div class="card">
+	<div class="wrap ">
+		<a class="btn btn-sm btn-primary" href="users.php">All Users</a>
+		<div class="card shadow">
 			<div class="card-body profile">
-				<img src="assets/media/img/pp_photo/passport-photos-keene-nh-0017.jpg" alt="">
+				<img  class="shadow" src="assets/media/img/pp_photo/passport-photos-keene-nh-0017.jpg" alt="">
 				<h1>Abedin Raju</h1>
 				<table class="table table-striped">
 				<tr>
@@ -35,6 +36,7 @@
 				<td>Name</td>
 				</tr>
 				</table>
+				<a class="btn btn-secondary btn-sm"href="">Log out</a>
 			</div>
 		</div>
 	</div>
