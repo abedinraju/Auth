@@ -51,9 +51,22 @@
     
 	$mess = validationMsg ('You should agree first !','warning');
 
-	}
+	}elseif( $pass != $cpass ){
 
-	
+	$mess = validationMsg ('Password Not Match !','warning');
+
+	}elseif(!filter_var($email ,FILTER_VALIDATE_EMAIL)){
+     
+	$mess = validationMsg ('Invalid email address','warning');
+
+	}else{
+
+
+	}
+    
+	$sql = "INSERT INTO users (name,email,cell,uname,pass,photo,status) VALUES ('$name','$email','$cell','$uname','$pass','','$status',)";
+	$connection -> query($sql);
+	$mess = validationMsg ('User ragistration successful ','success');
 }
 
 
