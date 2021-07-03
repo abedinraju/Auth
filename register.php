@@ -23,7 +23,7 @@
 	// Get Value
 
 	$name =$_POST['name'];
-	$emai =$_POST['email'];
+	$email =$_POST['email'];
 	$cell =$_POST['cell'];
 	$uname =$_POST['uname'];
 	$pass =$_POST['pass'];
