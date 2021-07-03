@@ -28,6 +28,12 @@
 	$uname =$_POST['uname'];
 	$pass =$_POST['pass'];
 	$cpass =$_POST['cpass'];
+
+
+
+	// Make Password Hash or Salt
+
+   	$hash_pass= password_hash($pass,PASSWORD_DEFAULT);
     
 	// Agreement Status
 
@@ -61,12 +67,14 @@
 
 	}else{
 
-
+		$sql = "INSERT INTO users (name,email,cell,uname,pass,photo,status)VALUES ('$name','$email','$cell','$uname','$hash_pass','','$status' )";
+	
+		$connection -> query($sql);
+	
+		$mess = validationMsg ('User ragistration successful ','success');
 	}
     
-	$sql = "INSERT INTO users (name,email,cell,uname,pass,photo,status) VALUES ('$name','$email','$cell','$uname','$pass','','$status',)";
-	$connection -> query($sql);
-	$mess = validationMsg ('User ragistration successful ','success');
+	
 }
 
 
