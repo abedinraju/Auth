@@ -10,5 +10,14 @@
 
 
 
+ /**
+  * Data Base Control(Insert)
+  */
+      function insert($sql){
+
+         global $connection;
+         $connection -> query($sql);
+      }
+  
 
 ?>

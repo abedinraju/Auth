@@ -67,9 +67,7 @@
 
 	}else{
 
-		$sql = "INSERT INTO users (name,email,cell,uname,pass,photo,status)VALUES ('$name','$email','$cell','$uname','$hash_pass','','$status' )";
-	
-		$connection -> query($sql);
+	  insert("INSERT INTO users (name,email,cell,uname,pass,photo,status)VALUES ('$name','$email','$cell','$uname','$hash_pass','','$status' )");
 	
 		$mess = validationMsg ('User ragistration successful ','success');
 	}
