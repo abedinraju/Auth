@@ -1,3 +1,5 @@
+<?php require_once "app/autoload.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,42 +12,102 @@
 </head>
 <body>
 	
+<?php 
+
+/**
+ * Social Ragistration Form Isseting
+ * 
+ */
+    if(isset($_POST['social'])){
+
+	// Get Value
+
+	$name =$_POST['name'];
+	$emai =$_POST['email'];
+	$cell =$_POST['cell'];
+	$uname =$_POST['uname'];
+	$pass =$_POST['pass'];
+	$cpass =$_POST['cpass'];
+    
+	// Agreement Status
+
+  	$status = 'disagree';
+	if(isset($_POST['status'])){
+	$status =$_POST['status'];
+	}
+
+	
+
+  /**
+ * Form Validation
+ */
+
+
+    if( empty($name) || empty($email) || empty($cell) || empty($uname) || empty($pass)){
+  
+	$mess = validationMsg ('All fields are required !');
+
+	}elseif( $status == 'disagree'){
+    
+	$mess = validationMsg ('You should agree first !','warning');
+
+	}
+
+	
+}
+
+
+
+?>
+
+
 	
 
 	<div class="wrap shadow">
 		<div class="card">
 			<div class="card-body">
 				<h2>Create Your Account</h2>
-				<form action="">
+				<?php 
+				 
+				 if(isset($mess )){
+					 echo $mess;
+				 }
+				
+				?>
+				<form action="" method="POST" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="">Name</label>
-						<input class="form-control" type="text">
+						<input name="name" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Email</label>
-						<input class="form-control" type="text">
+						<input name="email" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Cell</label>
-						<input class="form-control" type="text">
+						<input name="cell" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Username</label>
-						<input class="form-control" type="text">
+						<input name="uname" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Password</label>
-						<input class="form-control" type="password">
+						<input name="pass" class="form-control" type="password">
+					</div>
+					<div class="form-group">
+						<label for="">Confirm Password</label>
+						<input name="cpass" class="form-control" type="password">
 					</div>
 					<div class="form-group">
 						<label for="">Profile Picture</label>
-						<input class="form-control-file" type="file">
+						<input name="photo" class="form-control-file" type="file">
 					</div>
 					<div class="form-group">
-					<input type="checkbox" id=""> <label for="agree" >I agree to go</label>
+					<input name="status" value="agree" type="checkbox" id=""> <label for="agree" >I agree to go</label>
 					</div>
 					<div class="form-group">
-						<input class="btn btn-primary" type="submit" value="Sign Up">
+						<input name="social" class="btn btn-primary" type="submit" value="Sign Up">
 					</div>
 				</form>
 			</div>
