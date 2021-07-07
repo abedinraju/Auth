@@ -43,6 +43,16 @@
 	}
 
 	
+   // Email check
+
+   $email_check = valueCheck('users','email',$email);
+
+   // User name check
+   $uname_check = valueCheck('users','uname',$uname);
+
+   //Cell check
+   $cell_check = valueCheck('users','cell',$cell);
+
 
   /**
  * Form Validation
@@ -64,6 +74,16 @@
 	}elseif(!filter_var($email ,FILTER_VALIDATE_EMAIL)){
      
 	$mess = validationMsg ('Invalid email address','warning');
+
+	}elseif($email_check >0){
+
+	$mess = validationMsg ('Email already taken','warning');
+
+	}elseif( $uname_check > 0){
+	$mess = validationMsg ('User name already taken','warning');
+
+	}elseif( $cell_check >0 ){
+    $mess = validationMsg ('Cell number already taken','warning');
 
 	}else{
 
