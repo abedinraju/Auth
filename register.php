@@ -53,6 +53,13 @@
    //Cell check
    $cell_check = valueCheck('users','cell',$cell);
 
+   // File Upload
+
+   $file_name = $_FILES ['photo']{'name'};
+   $file_tmp = $_FILES ['photo']{'tmp_name'};
+
+   $unique_name = md5 (time() . rand()) . $file_name;
+
 
   /**
  * Form Validation
@@ -87,8 +94,8 @@
 
 	}else{
 
-	  insert("INSERT INTO users (name,email,cell,uname,pass,photo,status)VALUES ('$name','$email','$cell','$uname','$hash_pass','','$status' )");
-	
+	  insert("INSERT INTO users (name,email,cell,uname,pass,photo,status)VALUES ('$name','$email','$cell','$uname','$hash_pass','$unique_name','$status' )");
+	 move_uploaded_file($file_tmp,'photos/users/' . $unique_name );
 		$mess = validationMsg ('User ragistration successful ','success');
 	}
     
