@@ -1,8 +1,12 @@
+<?php include_once "app/autoload.php"; ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Development Area</title>
+	<title><?php echo $_SESSION['name']; ?> </title>
 	<!-- ALL CSS FILES  -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -16,24 +20,24 @@
 		<a class="btn btn-sm btn-primary" href="users.php">All Users</a>
 		<div class="card shadow">
 			<div class="card-body profile">
-				<img  class="shadow" src="assets/media/img/pp_photo/passport-photos-keene-nh-0017.jpg" alt="">
-				<h1>Abedin Raju</h1>
+				<img  class="shadow" src="photos/users/<?php echo $_SESSION['photo']; ?>" alt="">
+				<h1><?php echo $_SESSION['name']; ?></h1>
 				<table class="table table-striped">
 				<tr>
 				<td>Name</td>
-				<td>Name</td>
+				<td><?php echo $_SESSION['name']; ?></td>
 				</tr>
 				<tr>
-				<td>Name</td>
-				<td>Name</td>
+				<td>Email</td>
+				<td><?php echo $_SESSION['email']; ?></td>
 				</tr>
 				<tr>
-				<td>Name</td>
-				<td>Name</td>
+				<td>Username</td>
+				<td><?php echo $_SESSION['uname']; ?></td>
 				</tr>
 				<tr>
-				<td>Name</td>
-				<td>Name</td>
+				<td>Cell</td>
+				<td><?php echo $_SESSION['cell']; ?></td>
 				</tr>
 				</table>
 				<a class="btn btn-secondary btn-sm"href="">Log out</a>
