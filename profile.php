@@ -1,4 +1,15 @@
 <?php include_once "app/autoload.php"; ?>
+<?php 
+
+if(isset($_GET['logout'])AND $_GET ['logout']== 'ok'){
+session_destroy();
+header('location:index.php');
+
+
+}
+
+
+?>
 
 
 
@@ -40,7 +51,7 @@
 				<td><?php echo $_SESSION['cell']; ?></td>
 				</tr>
 				</table>
-				<a class="btn btn-secondary btn-sm"href="">Log out</a>
+				<a class="btn btn-secondary btn-sm"href="?logout=ok">Log out</a>
 			</div>
 		</div>
 	</div>
