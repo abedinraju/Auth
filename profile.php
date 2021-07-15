@@ -5,9 +5,11 @@ if(isset($_GET['logout'])AND $_GET ['logout']== 'ok'){
 session_destroy();
 header('location:index.php');
 
-
 }
-
+     if(!isset($_SESSION['name'])){
+	header('location:index.php');
+	
+	}
 
 ?>
 

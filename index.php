@@ -1,5 +1,15 @@
 <?php require_once "app/autoload.php"?>
 
+<?php 
+
+if(isset($_SESSION['name'])){
+
+header('location:profile.php');
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
