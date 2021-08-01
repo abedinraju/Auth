@@ -47,11 +47,15 @@
 							<td><?php echo $user['cell']; ?></td>
 							<td><img src="photos/users/<?php echo $user['photo']; ?>" alt=""></td>
 							<td>
-								<a class="btn btn-sm btn-info" href="#">View</a>
+								
 
 								<?php if($user['id']== $_SESSION['user_id']):?>
 								<a class="btn btn-sm btn-warning" href="#">Edit</a>
 								<a class="btn btn-sm btn-danger" href="#">Delete</a>
+								<?php else: ?>
+									
+									<a class="btn btn-sm btn-info" href="#">View</a>
+								
 
 								<?php  endif;  ?>
 							</td>
