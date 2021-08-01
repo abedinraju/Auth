@@ -19,7 +19,7 @@
 		<a class="btn btn-sm btn-primary" href="profile.php">Your Profile</a>
 		<div class="card shadow">
 			<div class="card-body">
-				<h2>All Data</h2>
+				<h2>All Users</h2>
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -36,20 +36,24 @@
                         
                         $sql="SELECT * FROM users ";
 						$data = $connection ->query($sql);
-                        
+                        $i = 1;
 						while( $user = $data -> fetch_assoc()) :
 
 						?>
 						<tr>
-							<td>1</td>
+							<td><?php echo $i; $i++; ?></td>
 							<td><?php echo $user['name']; ?></td>
 							<td><?php echo $user['email']; ?></td>
 							<td><?php echo $user['cell']; ?></td>
 							<td><img src="photos/users/<?php echo $user['photo']; ?>" alt=""></td>
 							<td>
 								<a class="btn btn-sm btn-info" href="#">View</a>
+
+								<?php if($user['id']== $_SESSION['user_id']):?>
 								<a class="btn btn-sm btn-warning" href="#">Edit</a>
 								<a class="btn btn-sm btn-danger" href="#">Delete</a>
+
+								<?php  endif;  ?>
 							</td>
 						</tr>
 						
