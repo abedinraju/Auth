@@ -54,7 +54,7 @@
 								<a class="btn btn-sm btn-danger" href="#">Delete</a>
 								<?php else: ?>
 									
-									<a class="btn btn-sm btn-info" href="#">View</a>
+									<a class="btn btn-sm btn-info" href="profile.php?user_id=<?php echo $user['id'];?>">View</a>
 								
 
 								<?php  endif;  ?>

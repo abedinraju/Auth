@@ -13,7 +13,6 @@ header('location:index.php');
     
 	if(isset($_SESSION['user_id'])){
 
-
     $id = $_SESSION['user_id'];
 	$sql = "SELECT * FROM users WHERE id='$id'";	
     $login_info=$connection -> query($sql);
@@ -21,7 +20,16 @@ header('location:index.php');
 	$info = $login_info ->fetch_assoc();
 
 	}
+    
+	if(isset($_GET['user_id'])){
 
+		$id = $_GET['user_id'];
+		$sql = "SELECT * FROM users WHERE id='$id'";	
+		$login_info=$connection -> query($sql);
+	
+		$info = $login_info ->fetch_assoc();
+	
+		}
 
 ?>
 
