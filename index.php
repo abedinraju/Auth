@@ -2,7 +2,7 @@
 
 <?php 
 
-if(isset($_SESSION['name'])){
+if(isset($_SESSION['user_id'])){
 
 header('location:profile.php');
 }
@@ -50,11 +50,7 @@ header('location:profile.php');
 			if( password_verify($pass, $login_users['pass'])){
 
 				$_SESSION['user_id'] = $login_users ['id'];
-				$_SESSION['name'] = $login_users ['name'];
-				$_SESSION['email'] = $login_users ['email'];
-				$_SESSION['cell'] = $login_users ['cell'];
-				$_SESSION['photo'] = $login_users ['photo'];
-				$_SESSION['uname'] = $login_users ['uname'];
+				
 
              header('location:profile.php');
 			}else{
