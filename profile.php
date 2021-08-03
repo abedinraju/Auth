@@ -3,6 +3,7 @@
 
 if(isset($_GET['logout'])AND $_GET ['logout']== 'ok'){
 session_destroy();
+setcookie('user_login' ,$login_users ['id'], time() -(60*60*24*30*12) ); 
 header('location:index.php');
 
 }
