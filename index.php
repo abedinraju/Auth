@@ -11,7 +11,7 @@ if(isset($_COOKIE['user_login'])){
 $id = $_COOKIE['user_login'];
 $cooke_user = $data = $connection ->query("SELECT * FROM user WHERE id='$id'");	
 
-$user_login_data = $cooke_user -> fetch_assoc();
+$user_login_data = $cooke_user ->fetch_assoc();
 
 $_SESSION['user_id'] = $user_login_data ['id'];
 header('location:profile.php');
@@ -106,8 +106,57 @@ header('location:profile.php');
 			<a class="card-link" href="register.php">Create An Account</a>
 			</div>
 		</div>
+
+		<div class="recent-login clearfix">
+		<div class="card rl-item">
+        <img class="card-img" src="photos/users/d0f7a0addd6c5378bc1c8cff5633a10e118651371_797384317469595_7437769822020981390_n.jpg" alt="">
+		 
+        
+        <div class="card-body">
+		<h4> Abedin Raju</h4>	
+		<a class="btn btn-sm btn-primary" href="">Log In</a>
+        </div>	
+        </div>
+		<div class="recent-login clearfix">
+		<div class="card rl-item">
+        <img class="card-img" src="photos/users/d0f7a0addd6c5378bc1c8cff5633a10e118651371_797384317469595_7437769822020981390_n.jpg" alt="">
+		 
+        
+        <div class="card-body">
+		<h4> Abedin Raju</h4>	
+		<a class="btn btn-sm btn-primary" href="">Log In</a>
+        </div>	
+        </div>
+		<div class="recent-login clearfix">
+		<div class="card rl-item">
+        <img class="card-img" src="photos/users/d0f7a0addd6c5378bc1c8cff5633a10e118651371_797384317469595_7437769822020981390_n.jpg" alt="">
+		 
+        
+        <div class="card-body">
+		<h4> Abedin Raju</h4>	
+		<a class="btn btn-sm btn-primary" href="">Log In</a>
+        </div>	
+        </div>
+		<div class="recent-login clearfix">
+		<div class="card rl-item">
+        <img class="card-img" src="photos/users/d0f7a0addd6c5378bc1c8cff5633a10e118651371_797384317469595_7437769822020981390_n.jpg" alt="">
+		 
+        
+        <div class="card-body">
+		<h4> Abedin Raju</h4>	
+		<a class="btn btn-sm btn-primary" href="">Log In</a>
+        </div>	
+        </div>
+		
+		</div>
 	</div>
 	
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
 
 
 
